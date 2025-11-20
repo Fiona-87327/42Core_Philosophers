@@ -1,0 +1,21 @@
+
+.vscode/
+.DS_Store
+*.o
+*.a
+# Debug Dateien
+*.dSYM/
+*.gch
+*.pch
+.tmp/
+tmp/
+*.tmp
+*.log
+.directory
+.Trash-*
+# Test Dateien (optional, je nach Bedarf)
+test_*
+valgrind-out.txt
+*.valgrind
+*.42
+a.out
