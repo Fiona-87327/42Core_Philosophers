@@ -3,7 +3,6 @@
 .DS_Store
 *.o
 *.a
-# Debug Dateien
 *.dSYM/
 *.gch
 *.pch
@@ -13,7 +12,6 @@ tmp/
 *.log
 .directory
 .Trash-*
-# Test Dateien (optional, je nach Bedarf)
 test_*
 valgrind-out.txt
 *.valgrind

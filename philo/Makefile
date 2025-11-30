@@ -2,7 +2,7 @@
 NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS =
+SRCS = aktion.c init.c utils.c main.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = -I./include
 RM = rm -f
