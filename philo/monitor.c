@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:30:14 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:20:51 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:37:19 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printf_status(t_philo *philo, char *status)
 	pthread_mutex_lock(philo->print_lock);
 	timestamp = get_time_in_ms() - philo->start_time;
 	if (!*(philo->dead))
-		printf("%zu %d %s\n", timestamp, philo->ph_id + 1, status);
+		printf("%zu %d %s\n", timestamp, philo->ph_id, status);
 	pthread_mutex_unlock(philo->print_lock);
 }
 

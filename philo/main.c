@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 14:05:43 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:09:51 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:55:10 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	check_input(char **argv)
 int	main(int argc, char **argv)
 {
 	t_program		program;
-	t_philo			philos[MAX_PHILOSOPHERS];
-	pthread_mutex_t	forks[MAX_PHILOSOPHERS];
+	t_philo			philos[200];
+	pthread_mutex_t	forks[200];
 
 	if (argc < 5 || argc > 6)
 	{

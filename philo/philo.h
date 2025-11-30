@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:11:56 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:54:59 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
-
-# define MAX_PHILOSOPHERS 200
 
 typedef struct s_philo
 {
