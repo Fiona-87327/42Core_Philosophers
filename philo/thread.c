@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 14:10:50 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 15:28:40 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/06 21:33:41 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*philo_thread(void *arg)
 
 	philo = (t_philo *)arg;
 	if (philo->ph_id % 2 == 0)
-		usleep(100);
+		ft_usleep(100);
 	while (!dead_check(philo))
 	{
 		eat_action(philo);

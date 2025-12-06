@@ -28,7 +28,7 @@ void	ft_usleep(size_t duration_in_ms)
 
 	start_time = get_time_in_ms();
 	while ((get_time_in_ms() - start_time) < duration_in_ms)
-		usleep(100);
+		usleep(500);
 }
 
 int	ft_strlen(char *str)
