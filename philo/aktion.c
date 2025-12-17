@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:09:03 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/11/30 19:40:10 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/17 10:48:26 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ void	print_action(t_philo *philo, const char *action)
 
 void	sleep_action(t_philo *philo)
 {
-	print_action(philo, "is sleeping😴");
+	print_action(philo, "is sleeping");
 	ft_usleep(philo->time_to_sleep);
 }
 
 void	think_action(t_philo *philo)
 {
-	print_action(philo, "is thinking🤔");
+	print_action(philo, "is thinking");
 }
 
 void	eat_action(t_philo *philo)
 {
 	pthread_mutex_lock(philo->left_fork);
-	print_action(philo, "has taken a fork🍴");
+	print_action(philo, "has taken a fork");
 	if (philo->number_of_philosophers == 1)
 	{
 		ft_usleep(philo->time_to_die);
@@ -49,11 +49,11 @@ void	eat_action(t_philo *philo)
 		return ;
 	}
 	pthread_mutex_lock(philo->right_fork);
-	print_action(philo, "has taken a fork🍴");
+	print_action(philo, "has taken a fork");
 	pthread_mutex_lock(philo->meal_time_lock);
 	philo->last_meal_time = get_time_in_ms();
 	pthread_mutex_unlock(philo->meal_time_lock);
-	print_action(philo, "is eating🍕");
+	print_action(philo, "is eating");
 	ft_usleep(philo->time_to_eat);
 	philo->meals_eaten++;
 	pthread_mutex_unlock(philo->right_fork);
@@ -69,6 +69,5 @@ void	die_action(t_philo *philo)
 	pthread_mutex_unlock(philo->dead_lock);
 	pthread_mutex_lock(philo->print_lock);
 	timestamp = get_time_in_ms() - philo->start_time;
-	printf("%zu %d died👽\n", timestamp, philo->ph_id + 1);
 	pthread_mutex_unlock(philo->print_lock);
 }
