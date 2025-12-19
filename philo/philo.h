@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 13:38:10 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/19 08:56:33 by jiyawang         ###   ########.fr       */
+/*   Updated: 2025/12/19 09:57:33 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <pthread.h>
 # include <stdio.h>
-# include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
 
