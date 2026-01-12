@@ -19,9 +19,6 @@ clean c:
 fclean f: clean
 	$(RM) $(NAME)
 
-v: $(NAME)
-	valgrind --tool=helgrind ./philo 5 800 200 200 7
-
 re: fclean all
 
 .PHONY: all clean fclean re c f
