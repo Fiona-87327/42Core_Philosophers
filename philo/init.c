@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:28:23 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/01/10 16:47:08 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:27:31 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,19 @@ void	init_program(t_program *program, t_philo *philos)
 	pthread_mutex_init(&program->print_lock, NULL);
 	pthread_mutex_init(&program->dead_lock, NULL);
 	pthread_mutex_init(&program->meal_lock, NULL);
+}
+
+void	print_action(t_philo *philo, const char *action)
+{
+	size_t	timestamp;
+
+	pthread_mutex_lock(philo->print_lock);
+	pthread_mutex_lock(philo->dead_lock);
+	if (*(philo->dead) == 0)
+	{
+		timestamp = get_time_in_ms() - philo->start_time;
+		printf("%zu %d %s\n", timestamp, philo->ph_id + 1, action);
+	}
+	pthread_mutex_unlock(philo->dead_lock);
+	pthread_mutex_unlock(philo->print_lock);
 }

@@ -6,7 +6,7 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:30:14 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/01/13 20:45:00 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/14 12:33:33 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	printf_status(t_philo *philo, char *status)
 	pthread_mutex_unlock(philo->print_lock);
 }
 
-int	philosophers_dead(t_philo *philo, size_t time_to_die)
+int	philosophers_dead(t_philo *philo, long time_to_die)
 {
 	pthread_mutex_lock(philo->meal_time_lock);
 	if (get_time_in_ms() - philo->last_meal_time >= time_to_die)
@@ -82,19 +82,18 @@ int	if_all_ate(t_philo *philo)
 	return (0);
 }
 
-void *monitor(void *arg)
+void	*monitor(void *arg)
 {
-    t_philo *philo;
-    
-    philo = (t_philo *)arg;
-    while (1)
-    {
-        if (if_philosophers_dead(philo) == 1)
-            break;
-        if (if_all_ate(philo) == 1)
-            break;
-        usleep(1000);
-    }
-    return (arg);
-}
+	t_philo	*philo;
 
+	philo = (t_philo *)arg;
+	while (1)
+	{
+		if (if_philosophers_dead(philo) == 1)
+			break ;
+		if (if_all_ate(philo) == 1)
+			break ;
+		usleep(1000);
+	}
+	return (arg);
+}

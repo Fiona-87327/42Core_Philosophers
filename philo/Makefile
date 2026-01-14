@@ -1,15 +1,16 @@
 
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror
 SRCS = aktion.c init.c utils.c philo.c monitor.c thread.c
 OBJS = $(SRCS:.c=.o)
 RM = rm -f
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -pthread
+
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)  -pthread
 
 all: $(NAME)
 

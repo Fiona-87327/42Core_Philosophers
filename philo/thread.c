@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 14:10:50 by jiyawang          #+#    #+#             */
-/*   Updated: 2026/01/13 20:42:02 by jiyawang         ###   ########.fr       */
+/*   Created: 2026/01/14 12:30:59 by jiyawang          #+#    #+#             */
+/*   Updated: 2026/01/14 12:31:03 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	*philo_thread(void *arg)
 	t_philo	*philo;
 
 	philo = (t_philo *)arg;
-	if (philo->ph_id % 2 == 0)
-		ft_usleep(100);
+	if (philo->ph_id % 2 != 0)
+		ft_usleep(10);
 	while (!dead_check(philo))
 	{
 		eat_action(philo);

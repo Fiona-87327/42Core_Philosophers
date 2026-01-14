@@ -6,25 +6,25 @@
 /*   By: jiyawang <jiyawang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:52:08 by jiyawang          #+#    #+#             */
-/*   Updated: 2025/12/14 14:31:49 by jiyawang         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:09:39 by jiyawang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-size_t	get_time_in_ms(void)
+long	get_time_in_ms(void)
 {
 	struct timeval	tv;
-	size_t			time_in_ms;
+	long			time_in_ms;
 
 	gettimeofday(&tv, NULL);
 	time_in_ms = (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
 	return (time_in_ms);
 }
 
-void	ft_usleep(size_t duration_in_ms)
+void	ft_usleep(long duration_in_ms)
 {
-	size_t	start_time;
+	long	start_time;
 
 	start_time = get_time_in_ms();
 	while ((get_time_in_ms() - start_time) < duration_in_ms)
