@@ -78,4 +78,3 @@ make v
 - `philo.h`: Header file with structures and function prototypes.
 
 ---
-Developed by **jiyawang** as part of the 42 project.
